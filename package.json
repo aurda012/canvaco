@@ -12,6 +12,8 @@
     "@liveblocks/client": "^1.9.7",
     "@liveblocks/react": "^1.9.7",
     "@liveblocks/react-comments": "^1.11.3",
+    "@types/fabric": "^5.3.7",
+    "@types/uuid": "^9.0.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "fabric": "^5.3.0",
