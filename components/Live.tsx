@@ -70,12 +70,7 @@ const Live = () => {
     }
   }, 100);
 
-  /**
-   * useEventListener is used to listen to events broadcasted by other
-   * users.
-   *
-   * useEventListener: https://liveblocks.io/docs/api-reference/liveblocks-react#useEventListener
-   */
+  // useEventListener is used to listen to events broadcasted by other users.
   useEventListener((eventData) => {
     const event = eventData.event as ReactionEvent;
     setReactions((reactions) =>
@@ -122,27 +117,25 @@ const Live = () => {
   }, [updateMyPresence]);
 
   // Listen to mouse events to change the cursor state
-  const handlePointerMove = useCallback(
-    (event: React.PointerEvent) => {
-      event.preventDefault();
+  const handlePointerMove = useCallback((event: React.PointerEvent) => {
+    event.preventDefault();
 
-      // if cursor is not in reaction selector mode, update the cursor position
-      if (cursor == null || cursorState.mode !== CursorMode.ReactionSelector) {
-        // get the cursor position in the canvas
-        const x = event.clientX - event.currentTarget.getBoundingClientRect().x;
-        const y = event.clientY - event.currentTarget.getBoundingClientRect().y;
+    // if cursor is not in reaction selector mode, update the cursor position
+    if (cursor == null || cursorState.mode !== CursorMode.ReactionSelector) {
+      // get the cursor position in the canvas
+      const x = event.clientX - event.currentTarget.getBoundingClientRect().x;
+      const y = event.clientY - event.currentTarget.getBoundingClientRect().y;
 
-        // broadcast the cursor position to other users
-        updateMyPresence({
-          cursor: {
-            x,
-            y,
-          },
-        });
-      }
-    },
-    [cursor, cursorState.mode, updateMyPresence]
-  );
+      // broadcast the cursor position to other users
+      updateMyPresence({
+        cursor: {
+          x,
+          y,
+        },
+      });
+    }
+    // eslint-disable-next-line
+  }, []);
 
   // Hide the cursor when the mouse leaves the canvas
   const handlePointerLeave = useCallback(() => {
@@ -153,7 +146,8 @@ const Live = () => {
       cursor: null,
       message: null,
     });
-  }, [updateMyPresence]);
+    // eslint-disable-next-line
+  }, []);
 
   // Show the cursor when the mouse enters the canvas
   const handlePointerDown = useCallback(
@@ -176,7 +170,8 @@ const Live = () => {
           : state
       );
     },
-    [cursorState.mode, setCursorState, updateMyPresence]
+    // eslint-disable-next-line
+    [cursorState.mode, setCursorState]
   );
 
   // hide the cursor when the mouse is up
