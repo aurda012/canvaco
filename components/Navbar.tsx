@@ -29,8 +29,8 @@ const Navbar = (
         <Image
           src="/assets/logo.svg"
           alt="CanvaCo Logo"
-          width={58}
-          height={20}
+          width={100}
+          height={30}
         />
 
         {/* <ul className="flex flex-row">
