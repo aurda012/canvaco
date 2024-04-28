@@ -16,6 +16,11 @@ const nextConfig = {
         hostname: "liveblocks.io",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "randomuser.me",
+        port: "",
+      },
     ],
   },
   typescript: {

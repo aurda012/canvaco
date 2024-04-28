@@ -1,3 +1,7 @@
+#id {
+  font-family: work sans, sans-serif;
+}
+
 .goUp0 {
   opacity: 0;
   animation: goUpAnimation0 2s, fadeOut 2s;
