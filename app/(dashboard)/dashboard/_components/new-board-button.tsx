@@ -20,6 +20,7 @@ export const NewBoardButton = ({ orgId, disabled }: NewBoardButtonProps) => {
     mutate({
       orgId,
       title: "Untitled",
+      type: "board",
     })
       .then((id) => {
         toast.success("Board created");
@@ -29,18 +30,33 @@ export const NewBoardButton = ({ orgId, disabled }: NewBoardButtonProps) => {
   };
 
   return (
-    <button
-      disabled={pending || disabled}
-      onClick={onClick}
-      className={cn(
-        "col-span-1 aspect-[100/127] bg-blue-600 transition-colors rounded-lg hover:bg-blue-800 flex flex-col items-center justify-center py-6",
-        (pending || disabled) &&
-          "opacity-75 cursor-not-allowed hover:bg-blue-600"
-      )}
-    >
-      <div />
-      <Plus className="h-12 w-12 text-white stroke-1" />
-      <p className="text-xs text-white font-light">New board</p>
-    </button>
+    <div className="flex flex-col">
+      <button
+        disabled={pending || disabled}
+        onClick={onClick}
+        className={cn(
+          "aspect-[163/100] bg-blue-600 transition-colors rounded-lg hover:bg-blue-800 flex flex-col items-center justify-center py-6",
+          (pending || disabled) &&
+            "opacity-75 cursor-not-allowed hover:bg-blue-600"
+        )}
+      >
+        <div />
+        <Plus className="h-12 w-12 text-white stroke-1" />
+        <p className="text-xs text-white font-light">New board</p>
+      </button>
+      <button
+        disabled={pending || disabled}
+        onClick={() => {}}
+        className={cn(
+          "mt-2 aspect-[163/100] bg-primary-green/85 hover:bg-primary-green dark:bg-primary-green/70 transition-colors rounded-lg dark:hover:bg-primary-green/90 flex flex-col items-center justify-center py-6",
+          (pending || disabled) &&
+            "opacity-75 cursor-not-allowed hover:bg-blue-600"
+        )}
+      >
+        <div />
+        <Plus className="h-12 w-12 text-white stroke-1" />
+        <p className="text-xs text-white font-light">New Fig</p>
+      </button>
+    </div>
   );
 };

@@ -20,10 +20,10 @@ export const EmptyBoards = () => {
       orgId: organization.id,
       type: "board",
     })
-      .then((id) => {
-        toast.success("Board created");
-        router.push(`/board/${id}`);
-      })
+      // .then((id) => {
+      //   toast.success("Board created");
+      //   router.push(`/board/${id}`);
+      // })
       .catch(() => toast.error("Failed to create board"));
   };
 

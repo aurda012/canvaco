@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Room from "./Room";
 
 /**
  * disable ssr to avoid pre-rendering issues of Next.js
@@ -7,4 +8,11 @@ import dynamic from "next/dynamic";
  */
 const App = dynamic(() => import("./App"), { ssr: false });
 
-export default App;
+const FigmaPage = () => {
+  return (
+    <Room roomId="894ry23">
+      <App />
+    </Room>
+  );
+};
+export default FigmaPage;

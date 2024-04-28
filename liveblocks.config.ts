@@ -9,7 +9,7 @@ import { Color, Layer } from "./types/canvas";
 
 const client = createClient({
   throttle: 16,
-  publicApiKey: process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!,
+  authEndpoint: "/api/liveblocks-auth",
 });
 
 // Presence represents the properties that exist on every user in the Room
@@ -20,6 +20,8 @@ type Presence = {
   selection: string[];
   pencilDraft: [x: number, y: number, pressure: number][] | null;
   penColor: Color | null;
+  cursorColor: string | null;
+  message: string | null;
   // ...
 };
 

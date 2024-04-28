@@ -22,6 +22,7 @@ interface ActionsProps {
   sideOffset?: DropdownMenuContentProps["sideOffset"];
   id: string;
   title: string;
+  type?: string;
 }
 
 /**
@@ -40,13 +41,14 @@ export const Actions = ({
   sideOffset,
   id,
   title,
+  type = "board",
 }: ActionsProps) => {
   const { onOpen } = useRenameModal();
   const { mutate, pending } = useApiMutation(api.board.remove);
 
   const onCopyLink = () => {
     navigator.clipboard
-      .writeText(`${window.location.origin}/board/${id}`)
+      .writeText(`${window.location.origin}/${type}/${id}`)
       .then(() => toast.success("Link copied"))
       .catch(() => toast.error("Failed to copy link"));
   };
