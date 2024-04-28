@@ -10,9 +10,9 @@ export const Loading = () => {
       <Image
         src={`/assets/${theme === "light" ? "logo-light" : "logo"}.svg`}
         alt="Logo"
-        width={112}
+        width={124}
         height={38}
-        className="animate-spin duration-700"
+        // className="animate-spin duration-700"
       />
     </div>
   );

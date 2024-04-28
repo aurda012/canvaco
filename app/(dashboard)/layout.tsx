@@ -28,7 +28,6 @@ export default function DashboardLayout({
           <Toaster />
           <ModalProvider />
           {children}
-          <DarkModeSwitcher />
         </ConvexClientProvider>
       </Suspense>
     </ClerkProvider>

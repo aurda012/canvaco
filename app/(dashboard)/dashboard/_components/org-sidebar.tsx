@@ -18,10 +18,10 @@ export const OrgSidebar = () => {
   return (
     <div className="hidden lg:flex flex-col space-y-6 w-[206px] pl-5 pt-5">
       <Link href="/">
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-2 pt-1">
           <Image
             src={`/assets/${theme === "light" ? "logo-light" : "logo"}.svg`}
-            width={112}
+            width={124}
             height={38}
             alt="Logo"
           />{" "}
@@ -43,7 +43,7 @@ export const OrgSidebar = () => {
               borderRadius: "8px",
               border: "1px solid #E6E7EB",
               justifyContent: "space-between",
-              backgroundColor: "white",
+              backgroundColor: theme === "light" ? "white" : "black",
             },
           },
         }}

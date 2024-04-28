@@ -1,3 +1,6 @@
+"use client";
+
+import DarkModeSwitcher from "@/components/shared/dark-mode-switcher";
 import { Navbar } from "./_components/navbar";
 import { OrgSidebar } from "./_components/org-sidebar";
 import { Sidebar } from "./_components/sidebar";
@@ -24,6 +27,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           </div>
         </div>
       </div>
+      <DarkModeSwitcher />
     </main>
   );
 };
