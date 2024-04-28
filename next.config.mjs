@@ -21,6 +21,7 @@ const nextConfig = {
         hostname: "randomuser.me",
         port: "",
       },
+      { protocol: "https", hostname: "img.clerk.com" },
     ],
   },
   typescript: {

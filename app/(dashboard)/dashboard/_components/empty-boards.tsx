@@ -13,11 +13,12 @@ export const EmptyBoards = () => {
   const { mutate, pending } = useApiMutation(api.board.create);
   const { organization } = useOrganization();
 
-  const onClick = () => {
+  const onClickBoard = () => {
     if (!organization) return;
     mutate({
       title: "Untitled",
       orgId: organization.id,
+      type: "board",
     })
       .then((id) => {
         toast.success("Board created");
@@ -28,19 +29,27 @@ export const EmptyBoards = () => {
 
   return (
     <div className="h-full flex flex-col items-center justify-center">
-      <Image src="/note.svg" height={140} width={140} alt="Empty" />
+      <Image src="/assets/note.svg" height={140} width={140} alt="Empty" />
       <h2 className="text-2xl font-semibold mt-6">Create your first board!</h2>
       <p className="text-muted-foreground text-sm mt-2">
         Start by creating a board for your organization
       </p>
-      <div className="mt-6">
+      <div className="mt-6 flex gap-2">
         <Button
-          className="disabled:cursor-not-allowed"
+          className="disabled:cursor-not-allowed dark:bg-white dark:text-black bg-black text-white"
           disabled={pending}
-          onClick={onClick}
+          onClick={onClickBoard}
           size="lg"
         >
-          Create board
+          Create Board
+        </Button>
+        <Button
+          className="disabled:cursor-not-allowed bg-primary-green/90 text-white font-semibold"
+          disabled={pending}
+          onClick={() => {}}
+          size="lg"
+        >
+          Create Fig
         </Button>
       </div>
     </div>
