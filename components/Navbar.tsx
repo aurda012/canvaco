@@ -7,33 +7,26 @@ import { navElements } from "@/constants";
 import { ActiveElement, NavbarProps } from "@/types/type";
 
 import { Button } from "./ui/button";
-// import ShapesMenu from "./ShapesMenu";
+import ShapesMenu from "./ShapesMenu";
 import ActiveUsers from "./users/ActiveUsers";
-// import { NewThread } from "./comments/NewThread";
+import { NewThread } from "./comments/NewThread";
 
-const Navbar = (
-  {} // activeElement,
-) =>
-  // imageInputRef,
-  // handleImageUpload,
-  // handleActiveElement,
-  // NavbarProps
-  {
-    // const isActive = (value: string | Array<ActiveElement>) =>
-    //   (activeElement && activeElement.value === value) ||
-    //   (Array.isArray(value) &&
-    //     value.some((val) => val?.value === activeElement?.value));
+const Navbar = ({
+  activeElement,
+  imageInputRef,
+  handleImageUpload,
+  handleActiveElement,
+}: NavbarProps) => {
+  const isActive = (value: string | Array<ActiveElement>) =>
+    (activeElement && activeElement.value === value) ||
+    (Array.isArray(value) &&
+      value.some((val) => val?.value === activeElement?.value));
 
-    return (
-      <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 text-white">
-        <Image
-          src="/assets/logo.svg"
-          alt="CanvaCo Logo"
-          width={100}
-          height={30}
-        />
+  return (
+    <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 text-white">
+      <Image src="/assets/logo.svg" alt="FigPro Logo" width={102} height={36} />
 
-        {/* <ul className="flex flex-row">
+      <ul className="flex flex-row">
         {navElements.map((item: ActiveElement | any) => (
           <li
             key={item.name}
@@ -48,9 +41,9 @@ const Navbar = (
                 : "hover:bg-primary-grey-200"
             }
             `}
-          > */}
-        {/* If value is an array means it's a nav element with sub options i.e., dropdown */}
-        {/* {Array.isArray(item.value) ? (
+          >
+            {/* If value is an array means it's a nav element with sub options i.e., dropdown */}
+            {Array.isArray(item.value) ? (
               <ShapesMenu
                 item={item}
                 activeElement={activeElement}
@@ -79,15 +72,15 @@ const Navbar = (
                   className={isActive(item.value) ? "invert" : ""}
                 />
               </Button>
-            )} */}
-        {/* </li>
+            )}
+          </li>
         ))}
-      </ul> */}
+      </ul>
 
-        <ActiveUsers />
-      </nav>
-    );
-  };
+      <ActiveUsers />
+    </nav>
+  );
+};
 
 export default memo(
   Navbar,

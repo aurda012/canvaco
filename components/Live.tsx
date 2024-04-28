@@ -12,7 +12,13 @@ import useInterval from "@/hooks/useInterval";
 import FlyingReaction from "./reaction/FlyingReaction";
 import ReactionSelector from "./reaction/ReactionButton";
 
-const Live = () => {
+type Props = {
+  canvasRef: React.MutableRefObject<HTMLCanvasElement | null>;
+  undo: () => void;
+  redo: () => void;
+};
+
+const Live = ({ canvasRef, undo, redo }: Props) => {
   // useOthers returns the list of other users in the room.
   const others = useOthers();
 
@@ -191,7 +197,8 @@ const Live = () => {
       onPointerUp={handlePointerUp}
       className="h-[100vh] w-full flex justify-center items-center text-center"
     >
-      <h1 className="text-5xl text-white">Hi</h1>
+      <canvas ref={canvasRef} />
+
       {/* Render the reactions */}
       {reactions.map((reaction) => (
         <FlyingReaction
