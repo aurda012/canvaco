@@ -4,8 +4,16 @@
 
 @import "@liveblocks/react-comments/styles.css";
 
+html,
+body,
+:root {
+  height: 100%;
+}
+
 * {
-  font-family: work sans, sans-serif;
+  font-family:
+    work sans,
+    sans-serif;
 }
 
 @layer base {
@@ -79,7 +87,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 

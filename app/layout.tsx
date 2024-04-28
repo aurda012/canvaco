@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider, useTheme } from "next-themes";
 
 import { fontHeading, fontSans, fontUrban } from "@/components/ui/fonts";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -36,21 +35,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${workSans.className} min-h-screen bg-background font-sans antialiased ${fontSans.variable} ${fontUrban.variable} ${fontHeading.variable}`}
+    <html lang="en">
+      <body
+        className={`${workSans.className} min-h-screen bg-background font-sans antialiased ${fontSans.variable} ${fontUrban.variable} ${fontHeading.variable}`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
