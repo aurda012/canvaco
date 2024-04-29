@@ -22,6 +22,7 @@ interface BoardCardProps {
   imageUrl: string;
   orgId: string;
   isFavorite: boolean;
+  type: string;
 }
 
 export const BoardCard = ({
@@ -33,6 +34,7 @@ export const BoardCard = ({
   imageUrl,
   orgId,
   isFavorite,
+  type,
 }: BoardCardProps) => {
   const { userId } = useAuth();
 
@@ -55,7 +57,7 @@ export const BoardCard = ({
   };
 
   return (
-    <Link href={`/board/${id}`}>
+    <Link href={`/${type}/${id}`}>
       <div className="group aspect-[100/127] border rounded-lg flex flex-col justify-between overflow-hidden">
         <div className="relative flex-1 bg-amber-50">
           <Image src={imageUrl} alt={title} fill className="object-fit" />

@@ -1,5 +1,9 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import Room from "./Room";
+import { useEffect } from "react";
+import { useTheme } from "next-themes";
 
 /**
  * disable ssr to avoid pre-rendering issues of Next.js
@@ -8,9 +12,21 @@ import Room from "./Room";
  */
 const App = dynamic(() => import("./App"), { ssr: false });
 
-const FigmaPage = () => {
+interface FigmaPageProps {
+  params: {
+    figmaId: string;
+  };
+}
+
+const FigmaPage = ({ params }: FigmaPageProps) => {
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme("dark");
+  }, [setTheme]);
+
   return (
-    <Room roomId="894ry23">
+    <Room roomId={params.figmaId}>
       <App />
     </Room>
   );

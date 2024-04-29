@@ -10,6 +10,7 @@ import { Button } from "./ui/button";
 import ShapesMenu from "./ShapesMenu";
 import ActiveUsers from "./users/ActiveUsers";
 import { NewThread } from "./comments/NewThread";
+import { Info } from "./shared/info";
 
 const Navbar = ({
   activeElement,
@@ -24,9 +25,8 @@ const Navbar = ({
 
   return (
     <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 text-white">
-      <Image src="/assets/logo.svg" alt="FigPro Logo" width={102} height={36} />
-
-      <ul className="flex flex-row">
+      <Info boardId="j577grsgfwj8y27ek5qtb2yh956r2cq3" />
+      <ul className="flex flex-row md:mr-[15vw]">
         {navElements.map((item: ActiveElement | any) => (
           <li
             key={item.name}

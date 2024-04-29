@@ -20,11 +20,25 @@ export const EmptyBoards = () => {
       orgId: organization.id,
       type: "board",
     })
-      // .then((id) => {
-      //   toast.success("Board created");
-      //   router.push(`/board/${id}`);
-      // })
+      .then((id) => {
+        toast.success("Board created");
+        router.push(`/board/${id}`);
+      })
       .catch(() => toast.error("Failed to create board"));
+  };
+
+  const onClickFigma = () => {
+    if (!organization) return;
+    mutate({
+      title: "Untitled",
+      orgId: organization.id,
+      type: "figma",
+    })
+      .then((id) => {
+        toast.success("Figma created");
+        router.push(`/figma/${id}`);
+      })
+      .catch(() => toast.error("Failed to create figma"));
   };
 
   return (
@@ -46,10 +60,10 @@ export const EmptyBoards = () => {
         <Button
           className="disabled:cursor-not-allowed bg-primary-green/90 text-white font-semibold"
           disabled={pending}
-          onClick={() => {}}
+          onClick={onClickFigma}
           size="lg"
         >
-          Create Fig
+          Create Figma
         </Button>
       </div>
     </div>

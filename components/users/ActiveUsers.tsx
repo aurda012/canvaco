@@ -2,10 +2,10 @@
 
 import { useMemo } from "react";
 
-import { generateRandomName } from "@/lib/utils";
+import { connectionIdToColor, generateRandomName } from "@/lib/utils";
 import { useOthers, useSelf } from "@/liveblocks.config";
 
-import Avatar from "./Avatar";
+import { UserAvatar } from "./user-avatar";
 
 const ActiveUsers = () => {
   // useOthers returns the list of other users in the room.
@@ -21,14 +21,21 @@ const ActiveUsers = () => {
     return (
       <div className="flex items-center justify-center gap-1">
         {currentUser && (
-          <Avatar name="You" otherStyles="border-[3px] border-primary-green" />
+          <UserAvatar
+            src={currentUser.info?.picture}
+            name={`${currentUser.info?.name} (You)`}
+            fallback={currentUser.info?.name?.[0]}
+            borderColor={connectionIdToColor(currentUser.connectionId)}
+          />
         )}
 
-        {others.slice(0, 2).map(({ connectionId }) => (
-          <Avatar
+        {others.slice(0, 2).map(({ connectionId, info }) => (
+          <UserAvatar
             key={connectionId}
-            name={generateRandomName()}
-            otherStyles="-ml-3"
+            src={info?.picture}
+            name={info?.name}
+            fallback={info?.name?.[0] || "T"}
+            borderColor={connectionIdToColor(connectionId)}
           />
         ))}
 

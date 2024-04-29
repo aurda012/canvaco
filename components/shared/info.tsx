@@ -30,30 +30,32 @@ export const Info = ({ boardId }: InfoProps) => {
   if (!data) return <InfoSkeleton />;
 
   return (
-    <div className="absolute top-2 left-2 bg-white rounded-md px-1.5 h-12 flex items-center shadow-md">
+    <div className=" rounded-md px-1.5 h-12 flex items-center shadow-md">
       <Hint label="Go to boards" side="bottom" sideOffset={10}>
-        <Button asChild className="px-2" variant="board">
+        <Button asChild className="pl-0 pr-2" variant="board">
           <Link href="/dashboard">
             <Image
-              src="/assets/logo-light.svg"
+              src="/assets/logo.svg"
               alt="CanvaCo logo"
               height={32}
-              width={124}
+              width={112}
             />
           </Link>
         </Button>
       </Hint>
-      <TabSeparator />
-      <Hint label="Edit title" side="bottom" sideOffset={10}>
-        <Button
-          onClick={() => onOpen(data._id, data.title)}
-          variant="board"
-          className="text-base font-normal px-2"
-        >
-          {data.title}
-        </Button>
-      </Hint>
-      <TabSeparator />
+      <div className="flex items-center mt-1">
+        <TabSeparator />
+        <Hint label="Edit title" side="bottom" sideOffset={10}>
+          <Button
+            onClick={() => onOpen(data._id, data.title)}
+            variant="board"
+            className="text-base font-normal px-2 hover:text-white"
+          >
+            {data.title}
+          </Button>
+        </Hint>
+        <TabSeparator />
+      </div>
       <Actions
         id={data._id}
         title={data.title}
