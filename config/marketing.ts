@@ -48,8 +48,8 @@ export const infos: InfoLdg[] = [
   {
     title: "Empower your projects",
     description:
-      "Unlock the full potential of your projects with our open-source SaaS platform. Collaborate seamlessly, innovate effortlessly, and scale limitlessly.",
-    image: "/images/work-from-home.jpg",
+      "Unlock the full potential of your projects with our beautiful figma-style design system. Create stunning designs that your users will love.",
+    image: "/images/figma.png",
     list: [
       {
         title: "Collaborative",
@@ -70,15 +70,14 @@ export const infos: InfoLdg[] = [
     ],
   },
   {
-    title: "Seamless Integration",
+    title: "Collaborate with ease",
     description:
-      "Integrate our open-source SaaS seamlessly into your existing workflows. Effortlessly connect with your favorite tools and services for a streamlined experience.",
-    image: "/images/work-from-home.jpg",
+      "Create awesome boards to organize your projects and tasks. Collaborate with your team members in real-time and get things done faster.",
+    image: "/images/board.png",
     list: [
       {
         title: "Flexible",
-        description:
-          "Customize your integrations to fit your unique requirements.",
+        description: "Customize your boards with any element you can imagine.",
         icon: "laptop",
       },
       {

@@ -1,6 +1,11 @@
+"use client";
+
+import { useTheme } from "next-themes";
 import Image from "next/image";
 
 export function PreviewLanding() {
+  const { theme } = useTheme();
+
   return (
     <div className="pb-6 sm:pb-16">
       <div className="container max-w-7xl">
@@ -8,7 +13,7 @@ export function PreviewLanding() {
           <div className="relative aspect-video overflow-hidden rounded-xl border md:rounded-lg">
             <Image
               className="size-full object-cover object-center"
-              src="/images/blog/blog-post-3.jpg"
+              src={`/images/dashboard-${theme === "dark" ? "dark" : "light"}.png`}
               alt="preview landing"
               width={2000}
               height={1000}

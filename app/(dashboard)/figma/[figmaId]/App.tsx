@@ -25,7 +25,7 @@ import { useMutation, useRedo, useStorage, useUndo } from "@/liveblocks.config";
 import { ActiveElement, Attributes } from "@/types/type";
 import { useEffect, useRef, useState } from "react";
 
-const App = () => {
+const App = ({ figmaId }: { figmaId: string }) => {
   /* useUndo and useRedo are hooks provided by Liveblocks that allow you to
    undo and redo mutations. */
   const undo = useUndo();
@@ -393,6 +393,7 @@ const App = () => {
           });
         }}
         handleActiveElement={handleActiveElement}
+        figmaId={figmaId}
       />
 
       <section className="flex h-full flex-row">

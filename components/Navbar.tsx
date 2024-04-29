@@ -17,6 +17,7 @@ const Navbar = ({
   imageInputRef,
   handleImageUpload,
   handleActiveElement,
+  figmaId,
 }: NavbarProps) => {
   const isActive = (value: string | Array<ActiveElement>) =>
     (activeElement && activeElement.value === value) ||
@@ -25,7 +26,7 @@ const Navbar = ({
 
   return (
     <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 text-white">
-      <Info boardId="j577grsgfwj8y27ek5qtb2yh956r2cq3" />
+      <Info boardId={figmaId} />
       <ul className="flex flex-row md:mr-[15vw]">
         {navElements.map((item: ActiveElement | any) => (
           <li

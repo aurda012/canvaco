@@ -15,6 +15,7 @@ const Page = () => {
       <Powered />
       <BentoGrid />
       <InfoLanding data={infos[0]} reverse={true} />
+      <InfoLanding data={infos[1]} reverse={false} />
       {/* <Features /> */}
       {/* <Testimonials /> */}
     </>

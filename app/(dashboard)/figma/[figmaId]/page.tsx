@@ -27,7 +27,7 @@ const FigmaPage = ({ params }: FigmaPageProps) => {
 
   return (
     <Room roomId={params.figmaId}>
-      <App />
+      <App figmaId={params.figmaId} />
     </Room>
   );
 };

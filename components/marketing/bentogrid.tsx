@@ -22,7 +22,7 @@ export function BentoGrid() {
                         fill="currentColor"
                       />
                     </svg>
-                    <span className="text-gradient_indigo-purple mx-auto block w-fit font-heading text-5xl">
+                    <span className="text-primary-green mx-auto block w-fit font-heading text-5xl">
                       100%
                     </span>
                   </div>
@@ -31,7 +31,6 @@ export function BentoGrid() {
                   </h2>
                 </div>
               </div>
-
               {/* Second card */}
               <div className="relative col-span-full overflow-hidden rounded-2xl border bg-background p-8 sm:col-span-3 lg:col-span-2">
                 <div>
@@ -69,9 +68,9 @@ export function BentoGrid() {
                           y2="72"
                           gradientUnits="userSpaceOnUse"
                         >
-                          <stop stopColor="purple" stopOpacity="0" />
+                          <stop stopColor="green" stopOpacity="0" />
                           <stop
-                            className="text-indigo-600"
+                            className="text-primary-green"
                             offset="1"
                             stopColor="currentColor"
                           />
@@ -81,7 +80,7 @@ export function BentoGrid() {
                             width="129"
                             height="72"
                             fill="white"
-                            className="fill-indigo-500 opacity-100"
+                            className="fill-bg-primary opacity-100"
                             transform="translate(41)"
                           />
                         </clipPath>
@@ -99,7 +98,6 @@ export function BentoGrid() {
                   </div>
                 </div>
               </div>
-
               {/* Third card */}
               <div className="relative col-span-full overflow-hidden rounded-2xl border bg-background p-8 sm:col-span-3 lg:col-span-2">
                 <div>
@@ -149,7 +147,7 @@ export function BentoGrid() {
                         fill="url(#paint0_linear_0_106)"
                       />
                       <path
-                        className="text-indigo-600/60"
+                        className="text-primary-green/60"
                         d="M3 121.077C3 121.077 15.3041 93.6691 36.0195 87.756C56.7349 81.8429 66.6632 80.9723 66.6632 80.9723C66.6632 80.9723 80.0327 80.9723 91.4656 80.9723C102.898 80.9723 100.415 64.2824 108.556 64.2824C116.696 64.2824 117.693 92.1332 125.226 92.1332C132.759 92.1332 142.07 78.5115 153.591 80.9723C165.113 83.433 186.092 92.1332 193 92.1332C199.908 92.1332 205.274 64.2824 213.017 64.2824C220.76 64.2824 237.832 93.8946 243.39 92.1332C248.948 90.3718 257.923 60.5 265.284 60.5C271.145 60.5 283.204 87.7182 285.772 87.756C293.823 87.8746 299.2 73.0802 304.411 73.0802C311.283 73.0802 321.425 65.9506 333.552 64.2824C345.68 62.6141 346.91 82.4553 362.27 80.9723C377.629 79.4892 383 106.605 383 106.605"
                         stroke="currentColor"
                         strokeWidth="3"
@@ -164,7 +162,7 @@ export function BentoGrid() {
                           gradientUnits="userSpaceOnUse"
                         >
                           <stop
-                            className="text-purple-600/80"
+                            className="text-primary-green/80"
                             stopColor="currentColor"
                           />
                           <stop
@@ -196,8 +194,7 @@ export function BentoGrid() {
                   </div>
                 </div>
               </div>
-
-              {/* Second row */}
+              {/* Second row
               <div className="relative col-span-full overflow-hidden rounded-2xl border bg-background p-8 lg:col-span-3">
                 <div className="grid sm:grid-cols-2">
                   <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
@@ -275,9 +272,8 @@ export function BentoGrid() {
                     </svg>
                   </div>
                 </div>
-              </div>
-
-              <div className="relative col-span-full overflow-hidden rounded-2xl border bg-background p-8 lg:col-span-3">
+              </div> */}
+              {/* <div className="relative col-span-full overflow-hidden rounded-2xl border bg-background p-8 lg:col-span-3">
                 <div className="grid h-full sm:grid-cols-2">
                   <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                     <div className="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:bg-white/5 dark:before:border-white/5 dark:before:bg-white/5">
@@ -359,7 +355,7 @@ export function BentoGrid() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
